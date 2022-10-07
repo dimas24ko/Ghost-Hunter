@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd9feb2ffe9247f6b261982a56b1baca, type: 3}
+  m_Name: GhostData
+  m_EditorClassIdentifier: 
+  GhostPrefab: {fileID: 620342316174922378, guid: c86f61ba574c8824c9a32cdeeacf1b7b, type: 3}
+  TimeStepToSpawn: 10
+  AllowingGhostCountOnScene: 6
