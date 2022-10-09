@@ -9,6 +9,8 @@ namespace GhostHunter.Runtime.Features.Ghost
 {
     public class GhostMover : MonoBehaviour
     {
+        private const float offsetZ = 0;
+        
         [SerializeField]
         private MoverSettings settings;
 
@@ -34,11 +36,10 @@ namespace GhostHunter.Runtime.Features.Ghost
         {
             while (true)
             {
-                var targetPosition = new Vector3(deltaX, deltaY);
+                var targetPosition = new Vector3(ghost.transform.position.x + deltaX, ghost.transform.position.y + deltaY, offsetZ);
                 targetPosition = CalculateTargetPosition(targetPosition);
 
-                ghost.DOMove(targetPosition, speed);
-                deltaX = -deltaX;
+                ghost.DOMove(targetPosition, speed).OnComplete(() => deltaX = -deltaX);
                 
                 yield return new WaitForSeconds(speed);
             }
@@ -47,10 +48,10 @@ namespace GhostHunter.Runtime.Features.Ghost
         private Vector3 CalculateTargetPosition(Vector3 targetPosition)
         {
             if (targetPosition.x < anchorsContainer.LeftXAnchor.x)
-                targetPosition = new Vector3(anchorsContainer.LeftXAnchor.x, targetPosition.y);
+                targetPosition = new Vector3(anchorsContainer.LeftXAnchor.x, targetPosition.y, offsetZ);
 
             if (targetPosition.x > anchorsContainer.RightXAnchor.x)
-                targetPosition = new Vector3(anchorsContainer.RightXAnchor.x, targetPosition.y);
+                targetPosition = new Vector3(anchorsContainer.RightXAnchor.x, targetPosition.y, offsetZ);
             
             return targetPosition;
         }

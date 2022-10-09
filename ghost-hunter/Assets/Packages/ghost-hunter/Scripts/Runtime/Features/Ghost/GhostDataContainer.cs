@@ -6,7 +6,6 @@ namespace GhostHunter.Runtime.Features.Ghost
     public class GhostDataContainer : ScriptableObject
     {
         public GameObject GhostPrefab;
-        public float TimeStepToSpawn;
         public int AllowingGhostCountOnScene;
     }
 }
