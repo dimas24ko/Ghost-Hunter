@@ -1,2 +1,2 @@
 # Ghost-Hunter
-It is completed test task
+simple 2d minigame where I created a small simple architecture 
